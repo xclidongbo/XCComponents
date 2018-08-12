@@ -1,0 +1,6 @@
+framework module XCComponents {
+  umbrella header "XCComponents.h"
+
+  export *
+  module * { export * }
+}
