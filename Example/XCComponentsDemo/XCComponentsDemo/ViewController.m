@@ -10,6 +10,7 @@
 #import "TextFieldsViewController.h"
 #import "ToastViewController.h"
 #import "ButtonViewController.h"
+#import "GestureUnlockViewController.h"
 
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -53,7 +54,9 @@ static NSDictionary * textFieldDic = nil;
                          @"FloatTextField",
                          @"AutoCompleteFloatTextField",
                          ],
-                 kUnlockConst: @[],
+                 kUnlockConst: @[
+                         @"GestureUnlock"
+                         ],
                  };
     NSArray *sortArr = [[self.dataDic allKeys] sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
         NSComparisonResult result = [obj1 compare:obj2];
@@ -123,7 +126,9 @@ static NSDictionary * textFieldDic = nil;
         vc.title = componentName;
         [self.navigationController pushViewController:vc animated:YES];
     }else if ([titleKey isEqualToString:kUnlockConst]) {
-        
+        GestureUnlockViewController * vc = [[GestureUnlockViewController alloc] init];
+        vc.title = componentName;
+        [self.navigationController pushViewController:vc animated:YES];
     }
     
 }

@@ -23,6 +23,15 @@
 /* Begin PBXBuildFile section */
 		ED1C9DFC21201B27005A50E6 /* UIView+XCToast.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1C9DFA21201B27005A50E6 /* UIView+XCToast.m */; };
 		ED1C9DFD21201B27005A50E6 /* UIView+XCToast.h in Headers */ = {isa = PBXBuildFile; fileRef = ED1C9DFB21201B27005A50E6 /* UIView+XCToast.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED1C9E0F21203141005A50E6 /* GUManager.h in Headers */ = {isa = PBXBuildFile; fileRef = ED1C9E0721203141005A50E6 /* GUManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED1C9E1021203141005A50E6 /* GUStyles.h in Headers */ = {isa = PBXBuildFile; fileRef = ED1C9E0821203141005A50E6 /* GUStyles.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED1C9E1121203141005A50E6 /* GestureItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1C9E0921203141005A50E6 /* GestureItem.m */; };
+		ED1C9E1221203141005A50E6 /* GestureUnlockView.h in Headers */ = {isa = PBXBuildFile; fileRef = ED1C9E0A21203141005A50E6 /* GestureUnlockView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED1C9E1321203141005A50E6 /* GUManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1C9E0B21203141005A50E6 /* GUManager.m */; };
+		ED1C9E1421203141005A50E6 /* GestureItem.h in Headers */ = {isa = PBXBuildFile; fileRef = ED1C9E0C21203141005A50E6 /* GestureItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED1C9E1521203141005A50E6 /* GUStyles.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1C9E0D21203141005A50E6 /* GUStyles.m */; };
+		ED1C9E1621203141005A50E6 /* GestureUnlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1C9E0E21203141005A50E6 /* GestureUnlockView.m */; };
+		ED1C9E1E21204EF2005A50E6 /* GestureUnlock.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ED1C9E1D21204EF2005A50E6 /* GestureUnlock.bundle */; };
 		ED541F91211E8F5D00270B5B /* XCComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED541F87211E8F5D00270B5B /* XCComponents.framework */; };
 		ED541F96211E8F5D00270B5B /* XCComponentsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED541F95211E8F5D00270B5B /* XCComponentsTests.m */; };
 		ED541F98211E8F5D00270B5B /* XCComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = ED541F8A211E8F5D00270B5B /* XCComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -47,6 +56,15 @@
 /* Begin PBXFileReference section */
 		ED1C9DFA21201B27005A50E6 /* UIView+XCToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XCToast.m"; sourceTree = "<group>"; };
 		ED1C9DFB21201B27005A50E6 /* UIView+XCToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XCToast.h"; sourceTree = "<group>"; };
+		ED1C9E0721203141005A50E6 /* GUManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUManager.h; sourceTree = "<group>"; };
+		ED1C9E0821203141005A50E6 /* GUStyles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUStyles.h; sourceTree = "<group>"; };
+		ED1C9E0921203141005A50E6 /* GestureItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureItem.m; sourceTree = "<group>"; };
+		ED1C9E0A21203141005A50E6 /* GestureUnlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureUnlockView.h; sourceTree = "<group>"; };
+		ED1C9E0B21203141005A50E6 /* GUManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUManager.m; sourceTree = "<group>"; };
+		ED1C9E0C21203141005A50E6 /* GestureItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureItem.h; sourceTree = "<group>"; };
+		ED1C9E0D21203141005A50E6 /* GUStyles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUStyles.m; sourceTree = "<group>"; };
+		ED1C9E0E21203141005A50E6 /* GestureUnlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureUnlockView.m; sourceTree = "<group>"; };
+		ED1C9E1D21204EF2005A50E6 /* GestureUnlock.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GestureUnlock.bundle; sourceTree = "<group>"; };
 		ED541F87211E8F5D00270B5B /* XCComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XCComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED541F8A211E8F5D00270B5B /* XCComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCComponents.h; sourceTree = "<group>"; };
 		ED541F8B211E8F5D00270B5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,6 +107,30 @@
 			path = XCToast;
 			sourceTree = "<group>";
 		};
+		ED1C9E052120311B005A50E6 /* Unlock */ = {
+			isa = PBXGroup;
+			children = (
+				ED1C9E0621203141005A50E6 /* GestureUnlock */,
+			);
+			path = Unlock;
+			sourceTree = "<group>";
+		};
+		ED1C9E0621203141005A50E6 /* GestureUnlock */ = {
+			isa = PBXGroup;
+			children = (
+				ED1C9E0821203141005A50E6 /* GUStyles.h */,
+				ED1C9E0D21203141005A50E6 /* GUStyles.m */,
+				ED1C9E0C21203141005A50E6 /* GestureItem.h */,
+				ED1C9E0921203141005A50E6 /* GestureItem.m */,
+				ED1C9E0721203141005A50E6 /* GUManager.h */,
+				ED1C9E0B21203141005A50E6 /* GUManager.m */,
+				ED1C9E0A21203141005A50E6 /* GestureUnlockView.h */,
+				ED1C9E0E21203141005A50E6 /* GestureUnlockView.m */,
+				ED1C9E1D21204EF2005A50E6 /* GestureUnlock.bundle */,
+			);
+			path = GestureUnlock;
+			sourceTree = "<group>";
+		};
 		ED541F7D211E8F5C00270B5B = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +152,7 @@
 		ED541F89211E8F5D00270B5B /* XCComponents */ = {
 			isa = PBXGroup;
 			children = (
+				ED1C9E052120311B005A50E6 /* Unlock */,
 				ED1C9DF921201B15005A50E6 /* XCToast */,
 				ED541FA2211E8FA900270B5B /* XCTextField */,
 				ED541FA1211E8F9900270B5B /* XCButton */,
@@ -159,6 +202,10 @@
 				ED541F98211E8F5D00270B5B /* XCComponents.h in Headers */,
 				ED541FA7211E913800270B5B /* FloatTextField.h in Headers */,
 				ED1C9DFD21201B27005A50E6 /* UIView+XCToast.h in Headers */,
+				ED1C9E0F21203141005A50E6 /* GUManager.h in Headers */,
+				ED1C9E1421203141005A50E6 /* GestureItem.h in Headers */,
+				ED1C9E1021203141005A50E6 /* GUStyles.h in Headers */,
+				ED1C9E1221203141005A50E6 /* GestureUnlockView.h in Headers */,
 				ED541FA9211E913800270B5B /* AutoCompleteFloatTextField.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,6 +293,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED1C9E1E21204EF2005A50E6 /* GestureUnlock.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,10 +327,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED1C9E1521203141005A50E6 /* GUStyles.m in Sources */,
 				ED541FAA211E913800270B5B /* AutoCompleteFloatTextField.m in Sources */,
 				ED1C9DFC21201B27005A50E6 /* UIView+XCToast.m in Sources */,
 				ED541FA8211E913800270B5B /* FloatTextField.m in Sources */,
+				ED1C9E1621203141005A50E6 /* GestureUnlockView.m in Sources */,
 				ED541FAE211E915900270B5B /* XCLoadBtn.m in Sources */,
+				ED1C9E1121203141005A50E6 /* GestureItem.m in Sources */,
+				ED1C9E1321203141005A50E6 /* GUManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
