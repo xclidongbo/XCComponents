@@ -9,7 +9,10 @@
 #import "TextFieldsViewController.h"
 #import <XCComponents/FloatTextField.h>
 #import <XCComponents/AutoCompleteFloatTextField.h>
-@interface TextFieldsViewController ()
+#import "UIColor+XCAdd.h"
+
+
+@interface TextFieldsViewController ()<UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong)UITextField * textField;
 
@@ -20,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = UIColorWithHex(0xEEEEEE);
     
     switch (_textFieldType) {
         case NSTextFieldTypeFloat:
@@ -50,7 +53,7 @@
             break;
     }
     
-    _textField.backgroundColor = [UIColor lightTextColor];
+    _textField.backgroundColor = UIColorWithHex(0xFFFFFF);
     [self.view addSubview:_textField];
     self.textField.translatesAutoresizingMaskIntoConstraints = false;
     
@@ -64,6 +67,9 @@
     [NSLayoutConstraint constraintWithItem:self.textField attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:30].active = YES;
     
     
+    UITapGestureRecognizer * tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGR:)];
+    tapGR.delegate = self;
+    [self.view addGestureRecognizer:tapGR];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,10 +77,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-    NSLog(@"view: %@", NSStringFromCGRect(self.view.frame));
-}
+//- (void)viewDidLayoutSubviews {
+//    [super viewDidLayoutSubviews];
+//    NSLog(@"view: %@", NSStringFromCGRect(self.view.frame));
+//}
 
 /*
 #pragma mark - Navigation
@@ -85,5 +91,18 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (void)tapGR:(UITapGestureRecognizer *)sender {
+    [self.textField endEditing:YES];
+}
+
+//解决tableView与endEditing手势冲突
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    if ([touch.view isKindOfClass:[AutoCompleteFloatTextField class]]||[touch.view isKindOfClass:[UITableView class]]) {//判断如果点击的是tableView的cell，就把手势给关闭了
+        return NO;//关闭手势
+    }//否则手势存在
+    return YES;
+}
+
+
 
 @end

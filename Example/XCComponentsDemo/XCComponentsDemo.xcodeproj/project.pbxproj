@@ -10,6 +10,9 @@
 		ED1C9DDF211ECB2A005A50E6 /* XCComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED1C9DDE211ECB2A005A50E6 /* XCComponents.framework */; };
 		ED1C9DE0211ECB2A005A50E6 /* XCComponents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED1C9DDE211ECB2A005A50E6 /* XCComponents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ED1C9DE4211FDE6A005A50E6 /* TextFieldsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1C9DE3211FDE6A005A50E6 /* TextFieldsViewController.m */; };
+		ED1C9DEE212012D3005A50E6 /* UIColor+XCAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1C9DED212012D3005A50E6 /* UIColor+XCAdd.m */; };
+		ED1C9E0021201BB1005A50E6 /* ToastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1C9DFF21201BB1005A50E6 /* ToastViewController.m */; };
+		ED1C9E0421202C95005A50E6 /* ButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1C9E0321202C95005A50E6 /* ButtonViewController.m */; };
 		ED541FBD211EBC2A00270B5B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED541FBC211EBC2A00270B5B /* AppDelegate.m */; };
 		ED541FC0211EBC2A00270B5B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED541FBF211EBC2A00270B5B /* ViewController.m */; };
 		ED541FC3211EBC2A00270B5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED541FC1211EBC2A00270B5B /* Main.storyboard */; };
@@ -55,6 +58,12 @@
 		ED1C9DDE211ECB2A005A50E6 /* XCComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = XCComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED1C9DE2211FDE6A005A50E6 /* TextFieldsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextFieldsViewController.h; sourceTree = "<group>"; };
 		ED1C9DE3211FDE6A005A50E6 /* TextFieldsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextFieldsViewController.m; sourceTree = "<group>"; };
+		ED1C9DEC212012D3005A50E6 /* UIColor+XCAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+XCAdd.h"; sourceTree = "<group>"; };
+		ED1C9DED212012D3005A50E6 /* UIColor+XCAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+XCAdd.m"; sourceTree = "<group>"; };
+		ED1C9DFE21201BB1005A50E6 /* ToastViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToastViewController.h; sourceTree = "<group>"; };
+		ED1C9DFF21201BB1005A50E6 /* ToastViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToastViewController.m; sourceTree = "<group>"; };
+		ED1C9E0221202C95005A50E6 /* ButtonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ButtonViewController.h; sourceTree = "<group>"; };
+		ED1C9E0321202C95005A50E6 /* ButtonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ButtonViewController.m; sourceTree = "<group>"; };
 		ED541FB8211EBC2A00270B5B /* XCComponentsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XCComponentsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED541FBB211EBC2A00270B5B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		ED541FBC211EBC2A00270B5B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -108,6 +117,33 @@
 			path = TextField;
 			sourceTree = "<group>";
 		};
+		ED1C9DE5212011AC005A50E6 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				ED1C9DEC212012D3005A50E6 /* UIColor+XCAdd.h */,
+				ED1C9DED212012D3005A50E6 /* UIColor+XCAdd.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		ED1C9DEF2120180D005A50E6 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				ED1C9DFE21201BB1005A50E6 /* ToastViewController.h */,
+				ED1C9DFF21201BB1005A50E6 /* ToastViewController.m */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
+		ED1C9E0121202C7B005A50E6 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				ED1C9E0221202C95005A50E6 /* ButtonViewController.h */,
+				ED1C9E0321202C95005A50E6 /* ButtonViewController.m */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
 		ED541FAF211EBC2A00270B5B = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +168,9 @@
 		ED541FBA211EBC2A00270B5B /* XCComponentsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				ED1C9E0121202C7B005A50E6 /* Button */,
+				ED1C9DEF2120180D005A50E6 /* Toast */,
+				ED1C9DE5212011AC005A50E6 /* Categories */,
 				ED1C9DE1211FDD38005A50E6 /* TextField */,
 				ED541FBB211EBC2A00270B5B /* AppDelegate.h */,
 				ED541FBC211EBC2A00270B5B /* AppDelegate.m */,
@@ -297,8 +336,11 @@
 			files = (
 				ED1C9DE4211FDE6A005A50E6 /* TextFieldsViewController.m in Sources */,
 				ED541FC0211EBC2A00270B5B /* ViewController.m in Sources */,
+				ED1C9E0421202C95005A50E6 /* ButtonViewController.m in Sources */,
 				ED541FCB211EBC2C00270B5B /* main.m in Sources */,
 				ED541FBD211EBC2A00270B5B /* AppDelegate.m in Sources */,
+				ED1C9E0021201BB1005A50E6 /* ToastViewController.m in Sources */,
+				ED1C9DEE212012D3005A50E6 /* UIColor+XCAdd.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

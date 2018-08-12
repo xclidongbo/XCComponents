@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 #import "TextFieldsViewController.h"
+#import "ToastViewController.h"
+#import "ButtonViewController.h"
+
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -23,9 +26,6 @@ static NSString * const kTextFiledConst = @"TextField";
 static NSString * const kToastConst = @"Toast";
 static NSString * const kButtonConst = @"Button";
 static NSString * const kUnlockConst = @"Unlock";
-
-
-
 
 static NSDictionary * textFieldDic = nil;
 
@@ -43,8 +43,12 @@ static NSDictionary * textFieldDic = nil;
                      };
     
     _dataDic = @{
-                 kToastConst: @[],
-                 kButtonConst: @[],
+                 kToastConst: @[
+                         @"XCToast",
+                         ],
+                 kButtonConst: @[
+                         @"XCLoadButton"
+                         ],
                  kTextFiledConst: @[
                          @"FloatTextField",
                          @"AutoCompleteFloatTextField",
@@ -111,9 +115,13 @@ static NSDictionary * textFieldDic = nil;
         vc.textFieldType = [[textFieldDic objectForKey:componentName] integerValue];
         [self.navigationController pushViewController:vc animated:YES];
     }else if ([titleKey isEqualToString:kToastConst]) {
-        
+        ToastViewController * vc = [[ToastViewController alloc] init];
+        vc.title = componentName;
+        [self.navigationController pushViewController:vc animated:YES];
     }else if ([titleKey isEqualToString:kButtonConst]) {
-        
+        ButtonViewController * vc = [[ButtonViewController alloc] init];
+        vc.title = componentName;
+        [self.navigationController pushViewController:vc animated:YES];
     }else if ([titleKey isEqualToString:kUnlockConst]) {
         
     }

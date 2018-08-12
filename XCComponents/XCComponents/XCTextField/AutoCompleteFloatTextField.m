@@ -35,7 +35,7 @@ static NSString * const cellIdentfily = @"cell";
 
 - (void)configureSubView {
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 300, 100) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     [self addSubview:self.tableView];
     [self bringSubviewToFront:self.tableView];
     self.tableView.delegate = self;
@@ -54,7 +54,7 @@ static NSString * const cellIdentfily = @"cell";
     [self addConstraint:[NSLayoutConstraint constraintWithItem:_tableView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1 constant:1]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(-10)-[_tableView]-(-10)-|" options:0 metrics:0 views:NSDictionaryOfVariableBindings(_tableView)]];
     
-    _tableHeightConst = [NSLayoutConstraint constraintWithItem:_tableView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:0 multiplier:1 constant:100];
+    _tableHeightConst = [NSLayoutConstraint constraintWithItem:_tableView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:0 multiplier:1 constant:0];
     [self.tableView addConstraint:_tableHeightConst];
 
     
@@ -67,7 +67,11 @@ static NSString * const cellIdentfily = @"cell";
     if (sourceData) {
         _dataArray = [NSMutableArray arrayWithArray:sourceData];
         _sourceData = [sourceData mutableCopy];
-        _tableHeightConst.constant = sourceData.count *30;
+        if (self.tableView.hidden) {
+            _tableHeightConst.constant = 0;
+        }else{
+            _tableHeightConst.constant = sourceData.count *30;
+        }
         [self.tableView reloadData];
     }
 }
