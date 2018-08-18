@@ -11,7 +11,7 @@
 #import "ToastViewController.h"
 #import "ButtonViewController.h"
 #import "GestureUnlockViewController.h"
-
+#import "AlertViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -27,6 +27,7 @@ static NSString * const kTextFiledConst = @"TextField";
 static NSString * const kToastConst = @"Toast";
 static NSString * const kButtonConst = @"Button";
 static NSString * const kUnlockConst = @"Unlock";
+static NSString * const kAlertConst = @"AlertController";
 
 static NSDictionary * textFieldDic = nil;
 
@@ -56,6 +57,9 @@ static NSDictionary * textFieldDic = nil;
                          ],
                  kUnlockConst: @[
                          @"GestureUnlock"
+                         ],
+                 kAlertConst: @[
+                         @"XCAlertController"
                          ],
                  };
     NSArray *sortArr = [[self.dataDic allKeys] sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
@@ -127,6 +131,10 @@ static NSDictionary * textFieldDic = nil;
         [self.navigationController pushViewController:vc animated:YES];
     }else if ([titleKey isEqualToString:kUnlockConst]) {
         GestureUnlockViewController * vc = [[GestureUnlockViewController alloc] init];
+        vc.title = componentName;
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if ([titleKey isEqualToString:kAlertConst]) {
+        AlertViewController * vc = [[AlertViewController alloc] init];
         vc.title = componentName;
         [self.navigationController pushViewController:vc animated:YES];
     }

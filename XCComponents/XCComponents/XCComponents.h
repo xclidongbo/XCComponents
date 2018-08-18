@@ -21,10 +21,12 @@ FOUNDATION_EXPORT const unsigned char XCComponentsVersionString[];
 #import <XCComponents/XCLoadBtn.h>
 #import <XCComponents/UIView+XCToast.h>
 #import <XCComponents/GestureUnlockView.h>
+#import <XCComponents/XCAlertViewController.h>
 #else
 #import "FloatTextField.h"
 #import "AutoCompleteFloatTextField.h"
 #import "XCLoadBtn.h"
 #import "UIView+XCToast.h"
 #import "GestureUnlockView.h"
+#import "XCAlertViewController.h"
 #endif

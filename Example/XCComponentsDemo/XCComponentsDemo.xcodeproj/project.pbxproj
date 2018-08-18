@@ -14,6 +14,7 @@
 		ED1C9E0021201BB1005A50E6 /* ToastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1C9DFF21201BB1005A50E6 /* ToastViewController.m */; };
 		ED1C9E0421202C95005A50E6 /* ButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1C9E0321202C95005A50E6 /* ButtonViewController.m */; };
 		ED1C9E1C2120329F005A50E6 /* GestureUnlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1C9E1B2120329F005A50E6 /* GestureUnlockViewController.m */; };
+		ED1C9E222120658E005A50E6 /* AlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1C9E212120658E005A50E6 /* AlertViewController.m */; };
 		ED541FBD211EBC2A00270B5B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED541FBC211EBC2A00270B5B /* AppDelegate.m */; };
 		ED541FC0211EBC2A00270B5B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED541FBF211EBC2A00270B5B /* ViewController.m */; };
 		ED541FC3211EBC2A00270B5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED541FC1211EBC2A00270B5B /* Main.storyboard */; };
@@ -67,6 +68,8 @@
 		ED1C9E0321202C95005A50E6 /* ButtonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ButtonViewController.m; sourceTree = "<group>"; };
 		ED1C9E1A2120329F005A50E6 /* GestureUnlockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GestureUnlockViewController.h; sourceTree = "<group>"; };
 		ED1C9E1B2120329F005A50E6 /* GestureUnlockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GestureUnlockViewController.m; sourceTree = "<group>"; };
+		ED1C9E202120658E005A50E6 /* AlertViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertViewController.h; sourceTree = "<group>"; };
+		ED1C9E212120658E005A50E6 /* AlertViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertViewController.m; sourceTree = "<group>"; };
 		ED541FB8211EBC2A00270B5B /* XCComponentsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XCComponentsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED541FBB211EBC2A00270B5B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		ED541FBC211EBC2A00270B5B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -156,6 +159,15 @@
 			path = GestureUnlock;
 			sourceTree = "<group>";
 		};
+		ED1C9E1F2120654B005A50E6 /* AlertController */ = {
+			isa = PBXGroup;
+			children = (
+				ED1C9E202120658E005A50E6 /* AlertViewController.h */,
+				ED1C9E212120658E005A50E6 /* AlertViewController.m */,
+			);
+			path = AlertController;
+			sourceTree = "<group>";
+		};
 		ED541FAF211EBC2A00270B5B = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +192,7 @@
 		ED541FBA211EBC2A00270B5B /* XCComponentsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				ED1C9E1F2120654B005A50E6 /* AlertController */,
 				ED1C9E1921203226005A50E6 /* GestureUnlock */,
 				ED1C9E0121202C7B005A50E6 /* Button */,
 				ED1C9DEF2120180D005A50E6 /* Toast */,
@@ -349,6 +362,7 @@
 			files = (
 				ED1C9DE4211FDE6A005A50E6 /* TextFieldsViewController.m in Sources */,
 				ED541FC0211EBC2A00270B5B /* ViewController.m in Sources */,
+				ED1C9E222120658E005A50E6 /* AlertViewController.m in Sources */,
 				ED1C9E1C2120329F005A50E6 /* GestureUnlockViewController.m in Sources */,
 				ED1C9E0421202C95005A50E6 /* ButtonViewController.m in Sources */,
 				ED541FCB211EBC2C00270B5B /* main.m in Sources */,
@@ -523,6 +537,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TTKKZ8P784;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -537,6 +552,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zoomdu.XCComponentsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -545,6 +561,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TTKKZ8P784;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -559,6 +576,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zoomdu.XCComponentsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
