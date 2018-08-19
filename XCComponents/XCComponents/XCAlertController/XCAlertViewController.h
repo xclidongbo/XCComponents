@@ -26,7 +26,7 @@ typedef NS_ENUM(NSInteger, XCAlertControllerStyle) {
 
 @property (nullable, nonatomic, readonly) NSString *title;
 @property (nonatomic, readonly) XCAlertActionStyle style;
-@property (nonatomic, getter=isEnabled) BOOL enabled;
+//@property (nonatomic, getter=isEnabled) BOOL enabled;
 
 @end
 

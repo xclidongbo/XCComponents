@@ -160,10 +160,13 @@ static CGFloat const lineViewHeight = 0.5;
     _lineView = [UIView new];
     [self.contentView addSubview:_lineView];
     
+    _actionItem.titleLabel.font = [UIFont systemFontOfSize:16];
     [_actionItem setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [_actionItem setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRGB:0xEEEEEE alpha:1]] forState:UIControlStateNormal];
+    [_actionItem setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRGB:0xFFFFFF alpha:1]] forState:UIControlStateNormal];
     [_actionItem setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRGB:0xDDDDDD alpha:1]] forState:UIControlStateHighlighted];
-    _lineView.backgroundColor = [UIColor lightGrayColor];
+    
+    _lineView.backgroundColor = [UIColor colorWithRGB:0xEFF0F0 alpha:1];
+    self.contentView.backgroundColor = [UIColor whiteColor];
     
     _actionItem.translatesAutoresizingMaskIntoConstraints = false;
     _lineView.translatesAutoresizingMaskIntoConstraints = false;
@@ -181,8 +184,10 @@ static CGFloat const lineViewHeight = 0.5;
 - (void)actionSheetLastCell:(BOOL)isLast {
     if (isLast) {
         _lineHeightConst.constant = 5;
+        _lineView.backgroundColor = [UIColor colorWithRGB:0xECEEF1 alpha:1];
     } else {
         _lineHeightConst.constant = lineViewHeight;
+        _lineView.backgroundColor = [UIColor colorWithRGB:0xEFF0F0 alpha:1];
     }
 }
 
@@ -239,17 +244,18 @@ static CGFloat const lineViewHeight = 0.5;
     _lineView = [UIView new];
     [self.contentView addSubview:_lineView];
     
+    _actionItemLeft.titleLabel.font = [UIFont systemFontOfSize:16];
     [_actionItemLeft setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [_actionItemLeft setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRGB:0xEEEEEE alpha:1]] forState:UIControlStateNormal];
+    [_actionItemLeft setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRGB:0xFFFFFF alpha:1]] forState:UIControlStateNormal];
     [_actionItemLeft setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRGB:0xDDDDDD alpha:1]] forState:UIControlStateHighlighted];
-    
+    _actionItemRight.titleLabel.font = [UIFont systemFontOfSize:16];
     [_actionItemRight setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [_actionItemRight setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRGB:0xEEEEEE alpha:1]] forState:UIControlStateNormal];
+    [_actionItemRight setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRGB:0xFFFFFF alpha:1]] forState:UIControlStateNormal];
     [_actionItemRight setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRGB:0xDDDDDD alpha:1]] forState:UIControlStateHighlighted];
     
     
-    _lineView.backgroundColor = [UIColor lightGrayColor];
-    self.contentView.backgroundColor = [UIColor lightGrayColor];
+    _lineView.backgroundColor = [UIColor colorWithRGB:0xEFF0F0 alpha:1];
+    self.contentView.backgroundColor = [UIColor colorWithRGB:0xEFF0F0 alpha:1];
     _actionItemLeft.translatesAutoresizingMaskIntoConstraints = false;
     _actionItemRight.translatesAutoresizingMaskIntoConstraints = false;
     _lineView.translatesAutoresizingMaskIntoConstraints = false;
@@ -257,10 +263,11 @@ static CGFloat const lineViewHeight = 0.5;
     [NSLayoutConstraint constraintWithItem:_actionItemLeft attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:44].active = YES;
     [NSLayoutConstraint constraintWithItem:_actionItemRight attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:44].active = YES;
     
+    NSDictionary * metrics = @{@"lineViewHeight": @(lineViewHeight)};
     [NSLayoutConstraint activateConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[_actionItemLeft]-(1)-[_actionItemRight(_actionItemLeft)]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_actionItemLeft,_actionItemRight)]];
     [NSLayoutConstraint activateConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[_lineView]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_lineView)]];
-    [NSLayoutConstraint activateConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_lineView(1)]-0-[_actionItemLeft]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_actionItemLeft,_lineView)]];
-    [NSLayoutConstraint activateConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_lineView(1)]-0-[_actionItemRight]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_actionItemRight,_lineView)]];
+    [NSLayoutConstraint activateConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_lineView(>=lineViewHeight)]-0-[_actionItemLeft]-0-|" options:0 metrics:metrics views:NSDictionaryOfVariableBindings(_actionItemLeft,_lineView)]];
+    [NSLayoutConstraint activateConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_lineView(>=lineViewHeight)]-0-[_actionItemRight]-0-|" options:0 metrics:metrics views:NSDictionaryOfVariableBindings(_actionItemRight,_lineView)]];
     
     
     [_actionItemLeft addTarget:self action:@selector(btnLeftClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -406,17 +413,16 @@ static dispatch_semaphore_t semaphore;
             [self.tableView.leadingAnchor constraintEqualToAnchor:safeGuide.leadingAnchor constant:8].active = YES;
             [self.tableView.trailingAnchor constraintEqualToAnchor:safeGuide.trailingAnchor constant:-8].active = YES;;
             [self.tableView.bottomAnchor constraintEqualToAnchor:safeGuide.bottomAnchor constant:0].active = YES;;
-            
         } else {
             [NSLayoutConstraint constraintWithItem:self.tableView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1 constant:8].active = YES;
             [NSLayoutConstraint constraintWithItem:self.tableView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTrailing multiplier:1 constant:-8].active = YES;
             [NSLayoutConstraint constraintWithItem:self.tableView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:0].active = YES;
         }
     }
-    
-    _alertHeightConst = [NSLayoutConstraint constraintWithItem:self.tableView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:0 multiplier:1 constant:200];
-    _alertHeightConst.active = true;
     self.tableView.tableHeaderView = [self headerView];
+    _alertHeightConst = [NSLayoutConstraint constraintWithItem:self.tableView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:0 multiplier:1 constant:CGRectGetHeight(self.tableView.tableHeaderView.bounds)];
+    _alertHeightConst.active = true;
+    
 }
 
 - (void)dismissAlertController {
@@ -434,8 +440,10 @@ static dispatch_semaphore_t semaphore;
     [baseView addSubview:titleLabel];
     [baseView addSubview:messageLabel];
     
-    titleLabel.font = [UIFont systemFontOfSize:15];
-    messageLabel.font = [UIFont systemFontOfSize:17];
+//    baseView.backgroundColor = [UIColor colorWithRGB:0xF8F8F8 alpha:1];
+    baseView.backgroundColor = [UIColor colorWithRGB:0xFFFFFF alpha:1];
+    titleLabel.font = [UIFont systemFontOfSize:17];
+    messageLabel.font = [UIFont systemFontOfSize:13];
     titleLabel.textColor = [UIColor blackColor];
     messageLabel.textColor = [UIColor blackColor];
     titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -444,28 +452,33 @@ static dispatch_semaphore_t semaphore;
     messageLabel.text = self.message;
     titleLabel.numberOfLines = 0;
     messageLabel.numberOfLines = 0;
-
-//    titleLabel.text = @"title";
-//    messageLabel.text = @"message";
     
-    CGFloat offsetY = 0, gap = 8;
+    CGFloat offsetX = 0, offsetY = 0, gap = 8;
     
     [self.tableView layoutIfNeeded];
     CGRect tableFrame = self.tableView.frame;
-    
+    offsetX = 8;
     if (titleLabel.text) {
         offsetY += 2*gap;
-        CGSize titleLabelSize = [titleLabel sizeThatFits:tableFrame.size];
-        titleLabel.frame = CGRectMake(0, offsetY, CGRectGetWidth(tableFrame), titleLabelSize.height);
+        CGFloat titleLabelWidth = tableFrame.size.width-16;
+        CGFloat titleLabelHeight = tableFrame.size.height;
+        CGSize titleLabelSize = [titleLabel sizeThatFits:CGSizeMake(titleLabelWidth, titleLabelHeight)];
+        titleLabel.frame = CGRectMake(offsetX, offsetY, titleLabelWidth, titleLabelSize.height);
         offsetY += titleLabelSize.height;
     }
     if (messageLabel.text){
         offsetY += gap;
-        CGSize messageLabelSize = [messageLabel sizeThatFits:tableFrame.size];
-        messageLabel.frame = CGRectMake(0, offsetY, CGRectGetWidth(tableFrame), messageLabelSize.height);
+        CGFloat messageLabelWidth = tableFrame.size.width-16;
+        CGFloat messageLabellHeight = tableFrame.size.height;
+        CGSize messageLabelSize = [messageLabel sizeThatFits:CGSizeMake(messageLabelWidth, messageLabellHeight)];
+        messageLabel.frame = CGRectMake(offsetX, offsetY, messageLabelWidth, messageLabelSize.height);
         offsetY += messageLabelSize.height;
     }
-    offsetY += 2*gap;
+    if (!titleLabel.text && !messageLabel.text) {
+        offsetX = 0;
+    }else{
+        offsetY += 2*gap;
+    }
     baseView.frame = CGRectMake(0, 0, CGRectGetWidth(tableFrame), offsetY);
     return baseView;
 }
@@ -520,6 +533,20 @@ static dispatch_semaphore_t semaphore;
     [self.tableView reloadData];
     [self.tableView layoutIfNeeded];
     self.alertHeightConst.constant = self.tableView.contentSize.height;
+    
+    UIRectCorner roundCorner;
+    if (self.preferredStyle == XCAlertControllerStyleAlert) {
+        roundCorner = UIRectCornerAllCorners;
+    }else{
+        roundCorner = UIRectCornerTopLeft|UIRectCornerTopRight;
+    }
+    CGRect tableRect = CGRectMake(self.tableView.bounds.origin.x, self.tableView.bounds.origin.y, CGRectGetWidth(self.tableView.bounds), self.tableView.contentSize.height);
+    UIBezierPath * maskPath = [UIBezierPath bezierPathWithRoundedRect:tableRect byRoundingCorners:roundCorner cornerRadii:CGSizeMake(5, 5)];
+    CAShapeLayer * maskLayer = [[CAShapeLayer alloc] init];
+    maskLayer.frame = self.tableView.bounds;
+    maskLayer.path = maskPath.CGPath;
+    self.tableView.layer.mask = maskLayer;
+    
 }
 #pragma mark - getter setter
 
