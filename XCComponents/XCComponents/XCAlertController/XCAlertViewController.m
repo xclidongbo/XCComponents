@@ -605,7 +605,7 @@ static NSString * const identifierDouble = @"cell2";
         [cell btnClickWithBlock:^(ActionItem * sender) {
             [self dismissViewControllerAnimated:YES completion:nil];
         }];
-        [cell actionSheetLastCell:(indexPath.row == self.dataArray.count-1)?YES:NO];
+        [cell actionSheetLastCell:((indexPath.row == self.dataArray.count-1)&&action.style ==XCAlertActionStyleCancel )?YES:NO];
         [cell setValueWithItem:action];
         return cell;
     }
